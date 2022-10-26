@@ -33,7 +33,7 @@
 			*/
 
       * {
-          box-sizing: border-box;
+				box-sizing: border-box;
       }
 
       body {
@@ -42,7 +42,7 @@
 
       .box {
           height: 100px;
-          width: 100px;
+          width: 20%;
           border: 1px solid black;
           color: aliceblue;
           display: block;
@@ -96,28 +96,68 @@
       #blue {
       }
 
+      h1::before {
+					content: "Kiinnostaa ";
+			}
+      h1::after {
+          content: " Kiinnostaa";
+      }
+
+      .clearfix::after {
+          content: "";
+          clear: both;
+          display: table;
+      }
+
+			#isoboksi {
+					background-color: antiquewhite;
+					width: 500px;
+					height: 500px;
+          position: relative;
+			}
+			#pieni1 {
+					width: 100px;
+					height: 100px;
+					background-color: aqua;
+          position: absolute;
+					bottom: 0;
+			}
+			#pieni2 {
+          width: 100px;
+          height: 100px;
+					background-color: brown;
+			}
+
 	</style>
 </head>
 
 <body>
 
+<div id="isoboksi">
+	<div id="pieni1">1</div>
+	<div id="pieni2">2</div>
+</div>
+
+<nav class="clearfix">
 <div class="box" id="red">Box 1</div>
 <div class="box" id="green">Box 2</div>
 <div class="box" id="blue">Box 3</div>
 <div class="box" id="yellow">Box 4</div>
 <div class="box" id="orange">Box 5</div>
-
+</nav>
 <!-- Float continues, clearing -->
-<div class="clear"></div>
 
 <h1>Heading 1</h1>
 <h1>Heading 1</h1>
 
-<p>This isn’t a “bug” (I don’t think). It’s just the way setting elements on a line works. You want spaces between words
+<div style="background-color: aquamarine; width: 50%">
+<p style="background-color: bisque; width: 25vw">This isn’t a “bug” (I don’t think). It’s just the way setting elements on a line works. You want spaces between words
 	that you type to be spaces right? The spaces between these blocks are just like spaces between words. That’s not to
 	say the spec couldn’t be updated to say that spaces between inline-block elements should be nothing, but I’m fairly
 	certain that is a huge can of worms that is unlikely to ever happen.</p>
+</div>
 
 <div id="testi">laatikko</div>
+
 </body>
 </html>

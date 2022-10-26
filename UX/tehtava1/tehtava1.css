@@ -1,0 +1,125 @@
+@font-face {
+    font-family: GalanoClassic;
+    src: url(GalanoClassic-Regular.woff2);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: GalanoClassic, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+#laatikko {
+    width: 100%;
+    height: 100vh;
+}
+
+#vasen {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    position: relative;
+}
+
+#oikea {
+    background-color: #e7e7e7;
+    display: block;
+    float: left;
+    width: 50%;
+    height: 100vh;
+}
+
+#kortti {
+    position: relative;
+    height: 400px;
+    max-width: 350px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#tausta {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 350px;
+    width: 300px;
+    box-shadow: 0 0 10px -5px;
+}
+
+img {
+    position: absolute;
+    max-width: 100%;
+    top: 0;
+    right: 0;
+}
+
+#sydan {
+    position: absolute;
+    padding: 5px;
+    top: 300px;
+}
+
+aside {
+    position: relative;
+    height: 500px;
+    width: 400px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+h2 {
+    margin: 0 10px 50px 10px;
+}
+
+ol {
+    text-align: left;
+    margin: 0 30px;
+}
+li {
+    padding: 10px;
+}
+
+input {
+    width: 200px;
+    height: 40px;
+}
+button {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 25px;
+    width: 100px;
+    height: 50px;
+    border: none;
+    background-color: coral;
+}
+
+button:hover {
+    box-shadow: 0 0 5px;
+}
+#fixed {
+    text-align: center;
+    z-index: 2;
+    height: 50px;
+    width: 150px;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#fixed:hover p {
+        font-weight: bold;
+}
+
+p {
+    margin: 0;
+}
