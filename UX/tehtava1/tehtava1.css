@@ -36,10 +36,10 @@ body {
 #kortti {
     position: relative;
     height: 400px;
-    max-width: 350px;
+    width: 350px;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 #tausta {
@@ -53,7 +53,7 @@ body {
 
 img {
     position: absolute;
-    max-width: 100%;
+    width: 100%;
     top: 0;
     right: 0;
 }
@@ -70,7 +70,7 @@ aside {
     width: 400px;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
@@ -82,6 +82,7 @@ ol {
     text-align: left;
     margin: 0 30px;
 }
+
 li {
     padding: 10px;
 }
@@ -90,6 +91,7 @@ input {
     width: 200px;
     height: 40px;
 }
+
 button {
     cursor: pointer;
     font-size: 15px;
@@ -104,6 +106,7 @@ button {
 button:hover {
     box-shadow: 0 0 5px;
 }
+
 #fixed {
     text-align: center;
     z-index: 2;
@@ -113,11 +116,12 @@ button:hover {
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
     background-color: rgba(0, 0, 0, 0.2);
 }
+
 #fixed:hover p {
-        font-weight: bold;
+    font-weight: bold;
 }
 
 p {
