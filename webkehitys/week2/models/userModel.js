@@ -17,6 +17,7 @@ const users = [
 const getUser = (userId) => {
   return users.filter((user) => {
     if (userId === user.id) {
+      delete user.password;
       return user;
     }
   }).pop();
