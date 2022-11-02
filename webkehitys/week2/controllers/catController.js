@@ -1,4 +1,5 @@
 'use strict';
+
 const {cats, getCat} = require('../models/catModel');
 
 const cat_list_get = (req, res) => {

@@ -16,7 +16,7 @@ const users = [
 
 const getUser = (userId) => {
   return users.filter((user) => {
-    if (userId === users.id) {
+    if (userId === user.id) {
       return user;
     }
   }).pop();

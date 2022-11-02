@@ -1,6 +1,6 @@
 'use strict';
 
-const {users} = require('../models/userModel');
+const {users, getUser} = require('../models/userModel');
 
 const users_get = (req, res) => {
   res.json(users);
@@ -9,7 +9,7 @@ const users_get = (req, res) => {
 const user_get = (req, res) => {
   const user = getUser(req.params.id);
   console.log('user', user);
-  res.json(users);
+  res.json(user);
 };
 
 module.exports = {
