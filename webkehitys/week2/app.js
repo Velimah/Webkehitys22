@@ -1,6 +1,5 @@
 'use strict';
 const express = require('express');
-const multer = require('multer');
 const cors = require('cors');
 const catRoute = require('./routes/catRoute');
 const userRoute = require('./routes/userRoute');
