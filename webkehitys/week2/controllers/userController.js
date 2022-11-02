@@ -12,6 +12,13 @@ const user_get = (req, res) => {
   res.json(user);
 };
 
+const user_post = (req, res) => {
+  console.log(req.body);
+  res.send('add user route');
+};
+
 module.exports = {
-  users_get, user_get,
+  users_get,
+  user_get,
+  user_post,
 };

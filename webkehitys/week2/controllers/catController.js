@@ -13,5 +13,6 @@ const cat_get = (req, res) => {
 };
 
 module.exports = {
-  cat_list_get, cat_get,
+  cat_list_get,
+  cat_get,
 };

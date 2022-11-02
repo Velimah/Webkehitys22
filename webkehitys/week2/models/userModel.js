@@ -24,5 +24,6 @@ const getUser = (userId) => {
 };
 
 module.exports = {
-  users, getUser,
+  users,
+  getUser,
 };

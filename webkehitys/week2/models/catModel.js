@@ -27,5 +27,6 @@ const getCat = (catId) => {
 };
 
 module.exports = {
-  cats, getCat,
+  cats,
+  getCat,
 };
