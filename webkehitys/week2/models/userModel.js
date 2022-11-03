@@ -16,7 +16,8 @@ const getUser = async (userId) => {
   try {
     const [rows] = await promisePool.execute(`SELECT user_id, name, email, role
                                                   FROM wop_user
-                                                  WHERE user_id = ?;`, [userId]);
+                                                  WHERE user_id = ?;`,
+        [userId]);
     return rows;
   } catch (e) {
     console.error('error', e.message);

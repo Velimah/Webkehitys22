@@ -9,9 +9,9 @@ const users_get = async (req, res) => {
 
 const user_get = async (req, res) => {
   const user = await getUser(req.params.id);
-  if(user.length > 0) {
+  if (user.length > 0) {
     res.json(user.pop());
-  }  else {
+  } else {
     res.send('virhe');
   }
 };
