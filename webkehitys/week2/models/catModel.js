@@ -31,7 +31,31 @@ const getCat = async (catId) => {
 const addCat = async (data) => {
   try {
     const [rows] = await promisePool.execute(`INSERT INTO wop_cat (name, birthdate, weight, owner, filename) 
-                                                  VALUES (?, ?, ?, ?, ?);`, data);
+                                                  VALUES (?, ?, ?, ?, ?);`,
+        data);
+    return rows;
+  } catch (e) {
+    console.error('error', e.message);
+  }
+};
+
+const updateCat = async (data) => {
+  try {
+    const [rows] = await promisePool.execute(`UPDATE wop_cat INNER JOIN wop_user 
+                                                  ON wop_cat.owner = wop_user.user_id 
+                                                  SET wop_cat.name = ?, wop_cat.birthdate = ?, wop_cat.weight = ? 
+                                                  WHERE wop_user.user_id = ?;`,
+        data);
+    return rows;
+  } catch (e) {
+    console.error('error', e.message);
+  }
+};
+
+const deleteCat = async (catId) => {
+  try {
+    const [rows] = await promisePool.execute(`DELETE FROM wop_cat WHERE wop_cat.cat_id = ?;`,
+        [catId]);
     return rows;
   } catch (e) {
     console.error('error', e.message);
@@ -42,4 +66,6 @@ module.exports = {
   getAllCats,
   getCat,
   addCat,
+  updateCat,
+  deleteCat,
 };
