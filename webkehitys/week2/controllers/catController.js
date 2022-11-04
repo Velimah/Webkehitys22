@@ -61,7 +61,7 @@ const cat_delete = async (req, res) => {
   const result = await deleteCat(req.params.id);
   if (result.affectedRows > 0) {
     res.json({
-      message: 'cat modified',
+      message: 'cat deleted',
     });
   } else {
     res.send('virhe');
