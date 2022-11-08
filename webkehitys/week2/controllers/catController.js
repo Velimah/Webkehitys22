@@ -45,17 +45,18 @@ const cat_update_put = async (req, res) => {
     req.body.birthdate,
     req.body.weight,
     req.body.owner,
+    req.body.id,
   ];
 
   const result = await updateCat(data);
-  if (result.affectedRows > 0) {
+  if(result.affectedRows > 0) {
     res.json({
       message: 'cat modified',
     });
   } else {
-    res.send('virhe');
+    res.send('virhe')
   }
-};
+}
 
 const cat_delete = async (req, res) => {
   const result = await deleteCat(req.params.id);

@@ -41,16 +41,12 @@ const addCat = async (data) => {
 
 const updateCat = async (data) => {
   try {
-    const [rows] = await promisePool.execute(`UPDATE wop_cat INNER JOIN wop_user 
-                                                  ON wop_cat.owner = wop_user.user_id 
-                                                  SET wop_cat.name = ?, wop_cat.birthdate = ?, wop_cat.weight = ? 
-                                                  WHERE wop_user.user_id = ?;`,
-        data);
+    const [rows] = await promisePool.execute(`UPDATE wop_cat set name = ?, birthdate = ?, weight = ?, owner = ? WHERE cat_id = ?;`, data);
     return rows;
   } catch (e) {
     console.error('error', e.message);
   }
-};
+}
 
 const deleteCat = async (catId) => {
   try {
