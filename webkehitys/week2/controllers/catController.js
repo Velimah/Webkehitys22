@@ -6,18 +6,19 @@ const {httpError} = require('../utils/errors');
 const {validationResult} = require('express-validator');
 
 const cat_list_get = async (req, res, next) => {
-  try {
 
+  try {
     const kissat = await getAllCats(next);
     res.json(kissat);
-
   } catch (e) {
     console.error('cat_list_get', e.message);
     next(httpError('Invalid input', 400));
   }
+
 };
 
 const cat_get = async (req, res, next) => {
+
   try {
     const cat = await getCat(req.params.id, next);
     if (cat.length > 0) {
@@ -29,12 +30,13 @@ const cat_get = async (req, res, next) => {
     console.error('cat_get', e.message);
     next(httpError('Invalid input', 400));
   }
+
 };
 
 const cat_post = async (req, res, next) => {
+
   try {
     const errors = validationResult(req);
-
     if (!errors.isEmpty()) {
       console.error('cat_post validation', errors.array());
       next(httpError('invalid data', 400));
@@ -62,13 +64,13 @@ const cat_post = async (req, res, next) => {
     console.error('cat_post', e.message);
     next(httpError('Invalid input', 400));
   }
+
 };
 
 const cat_update_put = async (req, res, next) => {
+
   try {
-
     const errors = validationResult(req);
-
     if (!errors.isEmpty()) {
       console.error('cat_update_put validation', errors.array());
       next(httpError('invalid data', 400));
@@ -95,11 +97,12 @@ const cat_update_put = async (req, res, next) => {
     console.error('cat_update_put', e.message);
     next(httpError('Invalid input', 400));
   }
+
 };
 
 const cat_delete = async (req, res, next) => {
-  try {
 
+  try {
     const result = await deleteCat(req.params.id, next);
     if (result.affectedRows > 0) {
       res.json({
@@ -112,6 +115,7 @@ const cat_delete = async (req, res, next) => {
     console.error('cat_delete', e.message);
     next(httpError('Invalid input', 400));
   }
+
 };
 
 module.exports = {
