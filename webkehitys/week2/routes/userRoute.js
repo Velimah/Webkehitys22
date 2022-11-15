@@ -11,7 +11,7 @@ router.route('/')
   .get(users_get)
   .post(body('name').isLength({min: 3}).escape(),
         body('email').isEmail(),
-        body('passwd').matches('(?=.*[A-ZÅÄÖ]).{8,}'),
+        body('passwd').matches(/(?=.*\p{Lu}).{8,}/u),
         user_create_post)
   .put( (req, res) => {
     res.send('With this endpoint you can edit cats.');
