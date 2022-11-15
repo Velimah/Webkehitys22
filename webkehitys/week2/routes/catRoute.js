@@ -10,6 +10,7 @@ const {cat_list_get, cat_get, cat_post, cat_update_put, cat_delete} = require(
     '../controllers/catController');
 const {body} = require('express-validator');
 
+//.post(passport.authenticate('jwt', {session: false}), upload.single('cat'),
 router.route('/')
   .get(cat_list_get)
   .post(upload.single('cat'),
