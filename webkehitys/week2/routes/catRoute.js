@@ -14,7 +14,7 @@ const {body} = require('express-validator');
 router.route('/')
   .get(cat_list_get)
   .post(upload.single('cat'),
-    body('name').isLength({min:1}).escape(),
+    body('name').isLength({min: 1}).escape(),
     body('birthdate').isDate(),
     body('weight').isNumeric(),
     body('owner').isNumeric(),
