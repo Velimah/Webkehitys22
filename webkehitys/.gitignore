@@ -106,6 +106,8 @@ web_modules/
 # Output of 'npm pack'
 *.tgz
 
+/UX/
+
 # Yarn Integrity file
 .yarn-integrity
 
@@ -312,6 +314,8 @@ Thumbs.db
 Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
+
+
 
 # Dump file
 *.stackdump
